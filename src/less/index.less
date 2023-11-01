@@ -1,17 +1,192 @@
 @divide: 10;
 @pswWidth: 414;
-@ppr: @divide/@pswWidth * 1rem;
+@ppr: (@divide/@pswWidth) * 1rem;
+@black: rgba(51, 51, 51);
+
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-.page-header {
-    display: flex;
-    .header-logo {
-        font-size: 0;
-        width:67*@ppr;
-        height:24*@ppr;
-        line-height: 7*@ppr;
+
+.header-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+
+    .page-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72*@ppr;
+        margin-left: 16*@ppr;
+        margin-right: 12*@ppr;
+
+        .header-logo {
+            font-size: 0;
+            width: 67*@ppr;
+            margin-left: 4*@ppr;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .header-right {
+            display: flex;
+
+            .header-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 10*@ppr;
+                height: 40*@ppr;
+                width: 40*@ppr;
+                font-size: 0;
+
+                img {
+                    display: block;
+                }
+            }
+        }
+
+
     }
+}
+
+
+.page-mainer {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    .mainer-nav {
+        display: flex;
+        height: 72*@ppr;
+        align-items: center;
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 16px;
+            height: 40*@ppr;
+
+            span {
+                font-size: 16*@ppr;
+                color: rgba(51, 51, 51, 0.8);
+            }
+
+        }
+
+        .nav-item.first {
+            background-color: rgba(0, 0, 0, 0.03);
+            border-radius: 999*@ppr;
+
+            span {
+                color: @black;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .mainer-content {
+        display: flex;
+        justify-content: space-between;
+
+        .mainer-list {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .mainer-item {
+                .pic {
+                    width: 189*@ppr;
+                    height: 142*@ppr;
+                    background-color: #ccc;
+                    border-radius: 12*@ppr;
+                }
+
+                .pic.h252 {
+                    height: 252*@ppr;
+                }
+
+                .post {
+                    padding: 12*@ppr;
+
+                    .post-txt {
+                        margin-bottom: 8*@ppr;
+                        width: 165*@ppr;
+                        color: @black;
+                        font-size: 14*@ppr;
+                        line-height: 19.6*@ppr;
+                    }
+
+                    .post-info {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .people {
+                            display: flex;
+                            margin-right: 12*@ppr;
+
+                            .avatar {
+                                margin-right: 6*@ppr;
+                                font-size: 0;
+
+                                img {
+                                    border: 1px solid rgba(0, 0, 0, 0.08);
+                                    border-radius: 20*@ppr;
+                                    width: 20*@ppr;
+                                    height: 20*@ppr;
+                                }
+                            }
+
+                            .name {
+                                display: flex;
+                                align-items: center;
+
+                                span {
+                                    font-size: 12*@ppr;
+                                    line-height: 13.8*@ppr;
+                                    color: rgba(51, 51, 51, 0.8);
+                                }
+
+                            }
+                        }
+
+                        .like {
+                            display: flex;
+                            align-items: center;
+
+                            .like-icon {
+                                font-size: 0;
+                            }
+
+                            .number {
+                                margin-left: 3*@ppr;
+                                font-size: 12*@ppr;
+                                color: rgba(51, 51, 51, 0.8);
+                                line-height: 13.8*@ppr;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.page-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 48*@ppr;
+    z-index: 100;
+    background-color: #fff;
 }
